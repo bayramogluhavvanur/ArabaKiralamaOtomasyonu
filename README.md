@@ -1,6 +1,6 @@
- 🚗 APEXAUTO ARABA KİRALAMA OTOMASYONU
+  APEXAUTO ARABA KİRALAMA OTOMASYONU
  
-   📖 **PROJE HAKKINDA**
+    **PROJE HAKKINDA**
 
    
    APEXAUTO,ASP.NET Core MVC ve Sql Server teknolojilerli kullanılarak geliştirilmiş bir araç kiralama otomasyon sistemidir.
@@ -9,7 +9,7 @@
 
    Proje kapsamında müşterilerin araç kiralama işlemlerini gerçekleştirebilmesi, araçların yönetilebilmesi,ödeme işlemlerinin takip edilmesi ve kiralama süreçlerinin dijital ortamda yönetilebilmesi için bir otomasyon sistemi geliştirilmiştir.Buradaki işlemler bir veri tabanı üzerinden kontrol edilebilmeltedir.
 
-  🔍**YAPILAN ARAŞTIRMALAR**
+  **YAPILAN ARAŞTIRMALAR**
   
   • Araç kiralamasistemine uygun bir veritabanı oluştururken veri tekrarının önlenmesi ve veri bütünlüğünün korunması amacıyla normalizasyon kuralları incelenmiş,tablolar 5. Normal Forma (5NF) uygun olcak şekilde tasarlanmıştır.
   
@@ -23,7 +23,7 @@
 
   • Bu araştırmalar sonucunda araç kiralama süreçlerini dijital ortamda yönetebilen, SQL Server veritabanı ile entegre çalışan ve ASP.NET Core MVC mimarisi kullanılarak geliştirilen bir araç kiralama otomasyonu ortaya çıkmıştır.
 
-  ⚙️ **AKIŞ ŞEMASI**
+   **AKIŞ ŞEMASI**
 
   ```mermaid
 flowchart TD
@@ -41,15 +41,15 @@ J --> K[Araç Durumunu Güncelle]
 K --> L([Bitiş])
 ```
 
- 🏗 **YAZILIM MİMARİSİ**
+  **YAZILIM MİMARİSİ**
 
-🎯 **Sistem Katmanları**
+ **Sistem Katmanları**
 
-🚩 **Kullanıcı Arayüzü (View Katmanı)**
+ **Kullanıcı Arayüzü (View Katmanı)**
 
   Bu katman kullanıcıların sistem ile etkileşime geçtiği bölümdür.
 
-  ➡️ Kullanılan Teknolojiler:
+   Kullanılan Teknolojiler:
   
   • HTML5
   
@@ -60,11 +60,11 @@ K --> L([Bitiş])
   • JavaScript
   Bu katmanda araç listeleme,araç kiralama,müşteri işlemleri ve ödeme ekranı yer almaktadır.
 
-  🚩 **Controller Katmanı**
+  **Controller Katmanı**
 
    Controller katmanı kullanıcıdan gelen istekleri karşılar ve gerekliişlemleri gerçekleştirir.
 
-  ➡️ Görevleri:
+   Görevleri:
   
   • Kullanıcı isteklerini almak
   
@@ -74,11 +74,11 @@ K --> L([Bitiş])
   
   • Sonçları View katmanına göndermek
 
-  🚩 **Model Katmanı**
+   **Model Katmanı**
 
    Model katmanı sistemde kullanılan veri yapılarını temsil eder.
 
-  ➡️ Örnek Modeller:
+   Örnek Modeller:
   
   • Customer
   
@@ -90,11 +90,11 @@ K --> L([Bitiş])
 
   Bu katman Entity Framework Core ile SQL Server veritabanı arasında veri aktarımını sağlamaktadır.
 
-  🚩 **Veri Erişim Katmanı (Entity Framework Core)**
+   **Veri Erişim Katmanı (Entity Framework Core)**
 
    Bu katman uygulama ile SQL Server arasındaki iletişimi sağlar.
 
-  ➡️ Görevleri:
+   Görevleri:
   
   • Veritabanı bağlantısı kurmak
   
@@ -106,11 +106,11 @@ K --> L([Bitiş])
   
   • Veri sorgulamak
 
- 🚩 **Veritabanı Katmanı**
+  **Veritabanı Katmanı**
 
   Sitemin tüm verileri SQL Server üzerinde tutulmaktadır.
 
-  ➡️ Veritabanında:
+   Veritabanında:
   
   • Tablolar
   
@@ -126,7 +126,7 @@ K --> L([Bitiş])
 
   bulunmaktadır.
 
-🔎 **Yazılım Mimarisi Akışı**
+ **Yazılım Mimarisi Akışı**
 
  Kullanıcı -> View -> Controller -> Entity Framework Core -> SQL Server
 
@@ -136,7 +136,7 @@ K --> L([Bitiş])
   
 
 
-📊 **ER DİYAGRAMI**
+ **ER DİYAGRAMI**
 ```mermaid
 erDiagram
 
@@ -234,21 +234,21 @@ erDiagram
 ```
 
 
-🏛 **GENEL YAPI**
+ **GENEL YAPI**
 
-➡️   ApexAuto araç kiralama süeçlerinin dijital ortamda yönetilebilmesi amacıyla geliştirilmiş web tabanlı bir araç kiralama otomasyon sistemidir.Proje kapsamında müşterilerin araçları görüntüleyebilmesi,araç kiralama işlemlerini gerçekleştirebilmesi,sigorta ve ek hizmet seçeneklerinden yararlanabilmesi ve ödeme işlemlerini tamamlayabilmesi hedeflenmiştir.
+   ApexAuto araç kiralama süeçlerinin dijital ortamda yönetilebilmesi amacıyla geliştirilmiş web tabanlı bir araç kiralama otomasyon sistemidir.Proje kapsamında müşterilerin araçları görüntüleyebilmesi,araç kiralama işlemlerini gerçekleştirebilmesi,sigorta ve ek hizmet seçeneklerinden yararlanabilmesi ve ödeme işlemlerini tamamlayabilmesi hedeflenmiştir.
 
-➡️ Sistem ASP.NET Core MVC [2] mimarisi kullanılarak geliştirilmiş olup,verilerin saklanması ve yönetilebilmesi için SQL Server veritabanı kullanılmıştır.Veritabanı tasarımında [1] veri tekrarını önlemek ve veri bütünlüğünü sağlamak amacıyla normalizasyon kuralları [10] dikkate alınmıştır.Müşteri,araç,şube,sigorta,kiralama,ödeme,yorum ve ek hizmetler süreçleri ilişkisel veritabanı yapısı içerisinde modellenmişir. 
+ Sistem ASP.NET Core MVC [2] mimarisi kullanılarak geliştirilmiş olup,verilerin saklanması ve yönetilebilmesi için SQL Server veritabanı kullanılmıştır.Veritabanı tasarımında [1] veri tekrarını önlemek ve veri bütünlüğünü sağlamak amacıyla normalizasyon kuralları [10] dikkate alınmıştır.Müşteri,araç,şube,sigorta,kiralama,ödeme,yorum ve ek hizmetler süreçleri ilişkisel veritabanı yapısı içerisinde modellenmişir. 
 
-➡️ Proje içerisinde veri erişim işlemlerinin yönetilebilmesi için Entity Framework Core [3] kullanılmıştır.Ayrıca veritabanı tarafında performansı ve iş süreçlerini iyileştirmek amacıyla View,Stored Procedure,Trigger ve Index yapıları kullanılmıştır.Bu sayede araç kiralama işlemlerinin daha hızlı ve kontrollü bir şekilde yürütülmesi sağlanmıştır. 
+ Proje içerisinde veri erişim işlemlerinin yönetilebilmesi için Entity Framework Core [3] kullanılmıştır.Ayrıca veritabanı tarafında performansı ve iş süreçlerini iyileştirmek amacıyla View,Stored Procedure,Trigger ve Index yapıları kullanılmıştır.Bu sayede araç kiralama işlemlerinin daha hızlı ve kontrollü bir şekilde yürütülmesi sağlanmıştır. 
 
-➡️ Kullanıcı arayüzü HTML,CSS,Bootstrap ve JavaScript teknolojileri [6],[7]kullanılarak geliştirilmiştir.Böylece kullanıcıların sistem üzerinde kolay ve anlaşılır bir şekilde işlem yapabilmesi amaçlanmıştır.
+ Kullanıcı arayüzü HTML,CSS,Bootstrap ve JavaScript teknolojileri [6],[7]kullanılarak geliştirilmiştir.Böylece kullanıcıların sistem üzerinde kolay ve anlaşılır bir şekilde işlem yapabilmesi amaçlanmıştır.
 
-➡️ Projenin geliştirme sürecinde Git ve GitHub kullnılarak sürüm kontrolü sağlanmış,proje dökümantasyonu hazırlanmış ve veritabanı yapısı ER diyagramı [8] ile modellenmiştir.
+ Projenin geliştirme sürecinde Git ve GitHub kullnılarak sürüm kontrolü sağlanmış,proje dökümantasyonu hazırlanmış ve veritabanı yapısı ER diyagramı [8] ile modellenmiştir.
 
-➡️ Sonuç olarak ApexAuto,araç kiralama işletmelerinin müşteri,araç,ödeme ve kiralama süreçlerini merkezi bir sistem üzerinden yönetebilmesine olanak sağlayan,veritabanı ve web teknolojilerinin birlikte kullanıldığı kapsamlı bir otomasyon projesidir.
+ Sonuç olarak ApexAuto,araç kiralama işletmelerinin müşteri,araç,ödeme ve kiralama süreçlerini merkezi bir sistem üzerinden yönetebilmesine olanak sağlayan,veritabanı ve web teknolojilerinin birlikte kullanıldığı kapsamlı bir otomasyon projesidir.
 
-📚 **REFERANSLAR**
+ **REFERANSLAR**
 
  [1] Microsoft Corporation, "SQL Server Documentation", Microsoft Learn. Erişim Adresi: https://learn.microsoft.com/sql
 
