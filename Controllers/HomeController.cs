@@ -14,27 +14,27 @@ namespace ApexAUTO_web.Controllers
             _logger = logger;
         }
 
-        // 1. Veritabaný baðlantý adresimiz (Connection String)
+        
         private string connectionString = @"Server=DESKTOP-8VUMRLO;Database=ApexAUTO;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public IActionResult Index()
         {
-            // Veritabanýndan çekeceðimiz araçlarý bu listenin içine dolduracaðýz
+            
             List<Dictionary<string, string>> araclarListesi = new List<Dictionary<string, string>>();
 
-            // 2. SQL Server ile baðlantý kuruyoruz
+            
             using (SqlConnection baglanti = new SqlConnection(connectionString))
             {
-                // Dün yazdýðýmýz View yapýsýný çaðýrýyoruz
+                
                 string sorgu = "SELECT Car_Brand, Car_Model, Car_Plate, Segment_Name, Daily_Fee, Car_State FROM vw_CarPricing";
 
                 using (SqlCommand komut = new SqlCommand(sorgu, baglanti))
                 {
-                    baglanti.Open(); // Baðlantýyý aç
+                    baglanti.Open(); 
 
                     using (SqlDataReader okuyucu = komut.ExecuteReader())
                     {
-                        // Veritabanýndaki tüm satýrlarý tek tek oku
+                        
                         while (okuyucu.Read())
                         {
                             var arac = new Dictionary<string, string>
@@ -52,7 +52,7 @@ namespace ApexAUTO_web.Controllers
                 }
             }
 
-            // 3. Veritabanýndan aldýðýmýz bu listeyi HTML sayfasýna (View'a) gönderiyoruz
+            
             return View(araclarListesi);
         }
         [HttpPost]
@@ -60,13 +60,13 @@ namespace ApexAUTO_web.Controllers
         {
             using (SqlConnection baglanti = new SqlConnection(connectionString))
             {
-                // SQL Server'da yazdýðýmýz Stored Procedure adýný veriyoruz
+            
                 using (SqlCommand komut = new SqlCommand("sp_AddRental", baglanti))
                 {
-                    // Bu komutun bir düz metin deðil, Prosedür olduðunu C#'a bildiriyoruz
+                    
                     komut.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    // Formdan gelen verileri SQL parametrelerine eþliyoruz
+                
                     komut.Parameters.AddWithValue("@CustomerID", musteriID);
                     komut.Parameters.AddWithValue("@CarID", aracID);
                     komut.Parameters.AddWithValue("@BranchID", subeID);
@@ -75,11 +75,11 @@ namespace ApexAUTO_web.Controllers
                     komut.Parameters.AddWithValue("@FinishDate", bitis);
 
                     baglanti.Open();
-                    komut.ExecuteNonQuery(); // SQL'deki prosedürü tetikler ve kaydeder
+                    komut.ExecuteNonQuery(); 
                 }
             }
 
-            // Ýþlem bittikten sonra sayfayý yenilemek için Index'e geri gönderiyoruz
+        
             return RedirectToAction("Index");
         }
 
@@ -127,17 +127,17 @@ namespace ApexAUTO_web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        // Booking Sayfasýný ve Kiralamalarý Getiren Fonksiyon
+        
         public IActionResult Booking(string aramaMetni)
         {
             List<Dictionary<string, string>> kiralamalar = new List<Dictionary<string, string>>();
 
             using (SqlConnection baglanti = new SqlConnection(connectionString))
             {
-                // Eðer arama kutusuna TC girildiyse Index tetiklensin diye WHERE Customers.TC_No filtrelemesi ekliyoruz
+                
                 string sorgu = "SELECT * FROM vw_RentalDetails";
 
-                // Burasý TC Kimlik Ýndeksini (IX_Customers_TCNo) sunumda hocaya kanýtlayacaðýnýz yerdir!
+                
                 if (!string.IsNullOrEmpty(aramaMetni))
                 {
                     sorgu = @"SELECT r.Rent_ID, c.Name + ' ' + c.Surname AS CustomerName, c.Phone_No, 
@@ -181,7 +181,7 @@ namespace ApexAUTO_web.Controllers
             return View(kiralamalar);
         }
 
-        // Araç Teslim Alýndýðýnda (Kayýt Silindiðinde) Tetiklenecek Fonksiyon
+        
         [HttpPost]
         public IActionResult KiralamaSil(int rentID)
         {
@@ -192,7 +192,7 @@ namespace ApexAUTO_web.Controllers
                 {
                     komut.Parameters.AddWithValue("@id", rentID);
                     baglanti.Open();
-                    komut.ExecuteNonQuery(); // DELETE iþlemiyle birlikte SQL'deki trg_MarkCarAsAvailable otomatik tetiklenir!
+                    komut.ExecuteNonQuery(); 
                 }
             }
             return RedirectToAction("Booking");
