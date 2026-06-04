@@ -1,6 +1,6 @@
   APEXAUTO ARABA KİRALAMA OTOMASYONU
  
-    **PROJE HAKKINDA**
+  **PROJE HAKKINDA**
 
    
    APEXAUTO,ASP.NET Core MVC ve Sql Server teknolojilerli kullanılarak geliştirilmiş bir araç kiralama otomasyon sistemidir.
@@ -130,7 +130,7 @@ K --> L([Bitiş])
 
  Kullanıcı -> View -> Controller -> Entity Framework Core -> SQL Server
 
- SQL Server -> Entty Framework Core -> Controller -> View -> Kullanıcı
+ SQL Server -> Entity Framework Core -> Controller -> View -> Kullanıcı
 
  Bu yapı sayesinde sistemin yönetilebilirliğİ,okunabilirliği ve geliştirilebilirliği artmıştır.
   
