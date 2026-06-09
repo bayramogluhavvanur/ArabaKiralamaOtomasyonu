@@ -58,6 +58,7 @@ K --> L([Bitiş])
   • Bootstrap
   
   • JavaScript
+
   Bu katmanda araç listeleme,araç kiralama,müşteri işlemleri ve ödeme ekranı yer almaktadır.
 
   **Controller Katmanı**
